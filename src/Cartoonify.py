@@ -1,15 +1,15 @@
 import torch
 from PIL import Image
 from pathlib import Path
-import os
+import config
 
 # Load the pretrained model and the face2paint utility
-generator = torch.hub.load("bryandlee/animegan2-pytorch:main", "generator", pretrained="paprika")
-face2paint = torch.hub.load("bryandlee/animegan2-pytorch:main", "face2paint", size=512)
+generator = torch.hub.load(config.animegan, "generator", pretrained="paprika")
+face2paint = torch.hub.load(config.animegan, "face2paint", size=512)
 
 # Define input and output directories
-input_dir = Path("dataset/real")
-output_dir = Path("dataset/cartoon")
+input_dir = Path(config.REAL_DIR)
+output_dir = Path(config.CARTOON_DIR)
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Supported image extensions
