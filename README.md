@@ -5,7 +5,7 @@ This project aims to classify images into two categories: `cartoon` or `real`. T
 ---
 
 
-!!!!! Revérifie les liens github car tu vas changer le nom du projet!!!!!!!!
+!!!!! ⚠️ Revérifie les liens github car tu vas changer le nom du projet!!!!!!!! N'oublie pas de modifier la partie Project Structure
 
 ## 📂 Project Overview
 
@@ -38,8 +38,6 @@ Create a `.env` file in the root of the project:
 PEXELS_API_KEY=your_api_key_here
 ```
 This key will be used by the dataset loader to retrieve real images.
-
-⚠️ Do not share your key. This file is ignored by Git.
 
 ## 🖼️ Cartoonify Images
 To generate cartoon images from real photos:
