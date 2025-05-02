@@ -48,6 +48,17 @@ python cartoonify.py --input dataset\real --output dataset\cartoon
 ```
 This uses AnimeGANv2 with the PyTorch wrapper by [bryanleed](https://github.com/bryandlee/animegan2-pytorch). You may need to download pretrained model. This project uses `paprika` cartoon style but you can choose another among this list of styles (`celeba_distill`,`celeface_paint_512_v1ba_distill`,`face_paint_512_v2`)
 
+## Training 
+
+You can choose to use the already annoted dataset. To do so, just import `dataset_loader` library like that:
+
+```bash
+from src.dataset_loader import ImageDataset
+
+dataset = ImageDataset(csv_file=config.CSV_PATH, transform=None, encode=True)
+```
+You can also use this library to print dataset values (image, label)
+
 ## 📁 Project Structure
 ```
 .
