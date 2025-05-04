@@ -1,0 +1,3 @@
+# Ignored files
+*.pth
+__pycache__/
