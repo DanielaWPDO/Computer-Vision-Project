@@ -20,7 +20,7 @@ This project aims to classify images into two categories: `cartoon` or `real`. T
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/cartoon-vs-real.git
+git clone https://github.com/DanielaWPDO/Computer-Vision-Project.git
 cd cartoon-vs-real
 ```
 ### 2. Install dependencies
@@ -32,10 +32,10 @@ pip install -r requirements.txt
 
 ### 🔐 API Key
 To fetch real-world images using the Pexels API, you need to set your API key.
-Create a `.env` file in the root of the project:
+For downloading images execute this code:
 
 ```bash
-PEXELS_API_KEY=your_api_key_here
+python image_downloader.py --api-key "your_api_key_here"
 ```
 This key will be used by the dataset loader to retrieve real images.
 
@@ -59,13 +59,39 @@ dataset = ImageDataset(csv_file=config.CSV_PATH, transform=None, encode=True)
 ```
 You can also use this library to print dataset values (image, label)
 
+## Deployment
+
+We use [Gradio](https://www.gradio.app/) to create an interactive web app for classifying images as either real or cartoon. The app also allows users to apply a cartoon effect to images before classification.
+
+To run the app, just execute the following command:
+```bash
+python app.py
+```
+
+After running the script, you will see an Url as output. Click the URL to open the app in your browser. Upload an image, optionally apply a cartoon effect, and click "Classify Image" to see the predicted result. And that's it!!! Simple, Right??
+
 ## 📁 Project Structure
 ```
 .
-├── cartoonify.py         # Cartoonification using AnimeGAN
-├── dataset_loader.py     # Image fetching using Pexels API
-├── classifier.py         # (Upcoming) Image classification logic
-├── .env.example          # Template for API key
-├── requirements.txt      # Python dependencies
+├── dataset/ # Dataset directory
+│ ├── cartoon/ # Cartoon images
+│ ├── real/ # Real images
+│ ├── download_image.py # Image downloading script
+│ └── labels.csv # Image labels
+│
+├── src/ # Source code
+│ ├── Cartoonify.py # Cartoonification using AnimeGAN
+│ ├── dataset_loader.py # Dataset loading utilities
+│ ├── Labeller.py # Image labeling utilities
+│ ├── Models_Training.ipynb # Model training script
+│ ├── Models_Evaluation.ipynb # Model Evaluation script
+│
+├── app.py # Main application script
+├── cm_resnet18_model.pth # Pretrained ResNet18 model
+├── config.py # Configuration file
+├── vit_model.pth # Pretrained Vision Transformer model
+├── requirements.txt # Python dependencies
 └── README.md
+
+
 ```
