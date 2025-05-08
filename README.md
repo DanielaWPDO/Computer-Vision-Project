@@ -1,4 +1,4 @@
-# 🧠 Cartoon vs Real: Image Classification using AnimeGAN
+#  Cartoon vs Real: Image Classification using AnimeGAN
 
 This project aims to classify images into two categories: `cartoon` or `real`. To achieve this, we use a combination of real-world image datasets and synthetic cartoon images generated from real photos using a deep learning model.
 
