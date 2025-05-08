@@ -4,9 +4,6 @@ This project aims to classify images into two categories: `cartoon` or `real`. T
 
 ---
 
-
-!!!!! ⚠️ Revérifie les liens github car tu vas changer le nom du projet!!!!!!!! N'oublie pas de modifier la partie Project Structure
-
 ## 📂 Project Overview
 
 - **Data acquisition**: Real-world images are fetched via the [Pexels API](https://www.pexels.com/api/).
